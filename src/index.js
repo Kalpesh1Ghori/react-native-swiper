@@ -14,7 +14,7 @@ import {
   Platform,
   ActivityIndicator
 } from 'react-native'
-
+import { ArrowRightWhiteIcon, ArrowBackWhiteIcon } from '../../../source/utils/svg'
 /**
  * Default styles
  * @type {StyleSheetPropType}
@@ -704,7 +704,7 @@ export default class extends Component {
     let button = null
 
     if (this.props.loop || this.state.index !== this.state.total - 1) {
-      button = this.props.nextButton || <Text style={styles.buttonText}>›</Text>
+      button = this.props.nextButton || <ArrowRightWhiteIcon/>
     }
 
     return (
@@ -721,7 +721,7 @@ export default class extends Component {
     let button = null
 
     if (this.props.loop || this.state.index !== 0) {
-      button = this.props.prevButton || <Text style={styles.buttonText}>‹</Text>
+      button = this.props.prevButton || <ArrowBackWhiteIcon/>
     }
 
     return (
@@ -733,6 +733,7 @@ export default class extends Component {
       </TouchableOpacity>
     )
   }
+
 
   renderButtons = () => {
     return (
